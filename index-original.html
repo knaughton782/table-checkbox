@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Matching</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      margin: 0 auto;
+      text-align: left;
+      max-width: 1000px;
+    }
+
+    .btn {
+      padding: 5px;
+      margin: 10px;
+      font-size: medium;
+      background-color: #e1f2fb;
+      border-radius: 4px;
+      border-color: #c2dfee;
+    }
+
+    .regular-checkbox {
+      -webkit-appearance: none;
+      background-color: #fafafa;
+      border: 1px solid #b0b8b8;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+      padding: 9px;
+      border-radius: 3px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .regular-checkbox:active,
+    .regular-checkbox:checked:active {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .regular-checkbox:checked {
+      background-color: #e9ecee;
+      border: 1px solid #adb8c0;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+      color: #99a1a7;
+    }
+
+    .regular-checkbox:checked:after {
+      content: '\2714';
+      font-size: 14px;
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      color: #1e4e22;
+    }
+
+    th,
+    td {
+      padding: 5px;
+      margin-bottom: 5px;
+      border: 2px solid #fff;
+    }
+
+    .checkbox-table {
+      color: #26424e;
+      font-family: Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
+      background-color: #f3efef;
+    }
+
+    .checkbox-table td {
+      background-color: #e1f2fb;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <h1>Quantitative Item Analysis</h1>
+  <div>
+    <p>Imagine you conducted a quantitative item analysis for a newly designed test to measure student knowledge of math. Assume that the test is homogeneous, and your goal is to have a 10-item test. The results of the item analysis are displayed below.</p>
+
+    <p>Select the 10 “best” items you would retain to make a 10-item test by placing a check mark next to your choices. Once you have made your decisions, click on the Answer button to reveal the correct answer.</p>
+
+
+    <table class="checkbox-table center">
+      <caption>Quantitative Item Analysis Options</caption>
+      <tr>
+        <th scope="col" style="width: 5%;">Item Number</th>
+        <th scope="col" style="width: 20%;">Average Interitem Correlation</th>
+        <th scope="col" style="width: 15%;">Difficulty</th>
+        <th scope="col" style="width: 20%;">Discrimination Index</th>
+        <th scope="col" style="width: 10%;">Click to Select</th>
+      </tr>
+      <tr id="row1">
+        <th scope="row">1</th>
+        <td>.40</td>
+        <td>.90</td>
+        <td>10</td>
+        <td><input class="regular-checkbox" type="checkbox" id="item1" name="item1" value=""></td>
+      </tr>
+      <tr id="row2">
+        <th scope="row">2</th>
+        <td>.38</td>
+        <td>.50</td>
+        <td>60</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item2" name="item2" value=""></td>
+      </tr>
+      <tr id="row3">
+        <th scope="row">3</th>
+        <td>.05</td>
+        <td>.50</td>
+        <td>19</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item3" name="item3" value=""></td>
+      </tr>
+      <tr id="row4">
+        <th scope="row">4</th>
+        <td>.30</td>
+        <td>.48</td>
+        <td>-2</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item4" name="item4" value=""></td>
+      </tr>
+      <tr id="row5">
+        <th scope="row">5</th>
+        <td>.50</td>
+        <td>.50</td>
+        <td>50</td>
+        <td><input class="regular-checkbox" type="checkbox" id="item5" name="item5" value=""></td>
+      </tr>
+      <tr id="row6">
+        <th scope="row">6</th>
+        <td>.01</td>
+        <td>.98</td>
+        <td>0</td>
+        <td><input class="regular-checkbox" type="checkbox" id="item6" name="item6" value=""></td>
+      </tr>
+      <tr id="row7">
+        <th scope="row">7</th>
+        <td>.60</td>
+        <td>.60</td>
+        <td>48</td>
+        <td><input class="regular-checkbox" type="checkbox" id="item7" name="item7" value=""></td>
+      </tr>
+      <tr id="row8">
+        <th scope="row">8</th>
+        <td>.00</td>
+        <td>.10</td>
+        <td>10</td>
+        <td><input class="regular-checkbox" type="checkbox" id="item8" name="item8" value=""></td>
+      </tr>
+      <tr id="row9">
+        <th scope="row">9</th>
+        <td>.55</td>
+        <td>.49</td>
+        <td>40</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item9" name="item9" value=""></td>
+      </tr>
+      <tr id="row10">
+        <th scope="row">10</th>
+        <td>.30</td>
+        <td>.61</td>
+        <td>-5</td>
+        <td><input type="checkbox" id="item10" class="regular-checkbox" name="item10" value=""></td>
+      </tr>
+      <tr id="row11">
+        <th scope="row">11</th>
+        <td>.44</td>
+        <td>.51</td>
+        <td>80</td>
+        <td><input type="checkbox" id="item11" name="item11" value="" class="regular-checkbox"></td>
+      </tr>
+      <tr id="row12">
+        <th scope="row">12</th>
+        <td>-.10</td>
+        <td>.66</td>
+        <td>7</td>
+        <td><input type="checkbox" id="item12" name="item12" value="" class="regular-checkbox"></td>
+      </tr>
+      <tr id="row13">
+        <th scope="row">13</th>
+        <td>.40</td>
+        <td>.55</td>
+        <td>75</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item13" name="item13" value=""></td>
+      </tr>
+      <tr id="row14">
+        <th scope="row">14</th>
+        <td>.77</td>
+        <td>.43</td>
+        <td>-10</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item14" name="item14" value=""></td>
+      </tr>
+      <tr id="row15">
+        <th scope="row">15</th>
+        <td>.71</td>
+        <td>.71</td>
+        <td>60</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item15" name="item15" value=""></td>
+      </tr>
+      <tr id="row16">
+        <th scope="row">16</th>
+        <td>.33</td>
+        <td>.56</td>
+        <td>40</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item16" name="item16" value=""></td>
+      </tr>
+      <tr id="row17">
+        <th scope="row">17</th>
+        <td>.00</td>
+        <td>.2</td>
+        <td>15</td>
+        <td><input type="checkbox" id="item17" name="item17" value="" class="regular-checkbox"></td>
+      </tr>
+      <tr id="row18">
+        <th scope="row">18</th>
+        <td>.22</td>
+        <td>.35</td>
+        <td>60</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item18" name="item18" value=""></td>
+      </tr>
+      <tr id="row19">
+        <th scope="row">19</th>
+        <td>.55</td>
+        <td>.43</td>
+        <td>70</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item19" name="item19" value=""></td>
+      </tr>
+      <tr id="row20">
+        <th scope="row">20</th>
+        <td>.04</td>
+        <td>.40</td>
+        <td>16</td>
+        <td><input type="checkbox" class="regular-checkbox" id="item20" name="item20" value=""></td>
+      </tr>
+    </table>
+
+    <div class="hint-section" style="text-align: right;">
+
+
+      <p>Need a hint?</p>
+      <button class="btn aaa">Hint 1</button>
+      <p class="hint1 hide">
+        <!-- this is hint one  -->
+        Good items have inter-item correlations of .15 or greater, difficulty around .5, and a discrimination index >30.</p>
+
+      <button class="btn bbb">Hint 2</button>
+      <p class="hint2 hide">
+        <!-- this is hint two   -->
+        The “worst” items that should be retained are #15 because of its high difficulty score (meaning it’s too easy) and #18 because of its low difficulty score (meaning it’s too hard); however, these items are still better than the alternatives that were not retained.</p>
+
+    </div>
+    <!-- <table class="missing-words__table">
+      <thead>
+        <tr>
+          <th style="width: 66.666%;">Its Purpose</th>
+          <th style="width: 33.333%;" class="has-rip">The Law</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>This civil rights law prohibits discrimination soley on the basis of diability in employment, public services and accommodation.</td>
+          <td class="has-rip">
+            <span class="missing-words__blank blank" data-accept="word-4"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>This law protects the privacy of student education records and allows parents access to all personally identifiable information collected, maintained or used by their school district in regard to their child.</td>
+          <td class="has-rip">
+            <span class="missing-words__blank blank" data-accept="word-5"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>This law prohibits discrimination on the basis of disability in programs and activities, public and private, that receive federal financial assistance.</td>
+          <td class="has-rip">
+            <span class="missing-words__blank blank" data-accept="word-1"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>This education law provides federal financial assistance to state and local education agencies to guarantee that special education and related services are provided to eligible children with disabilities.</td>
+          <td class="has-rip">
+            <span class="missing-words__blank blank" data-accept="word-3"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>This law replaces the Elementary and Secondary Education Act (ESEA) and holds schools more accountable for student achievement by publishing test scores, rewarding high-achieving schools and helping or penalizing chronically low-performing ones.</td>
+          <td class="has-rip">
+            <span class="missing-words__blank blank" data-accept="word-2"></span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table> -->
+
+  </div>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+  <script>
+
+    // default state of hint button content 
+    $(".hide").hide();
+
+    // show/hide hint content
+    $('.btn').click(function () {
+      switch (true) {
+        case $(this).hasClass('aaa'):
+          $(".hint1").toggle();
+          break;
+        case $(this).hasClass('bbb'):
+          $(".hint2").toggle();
+          break;
+      }
+    })
+
+if ($(".regular-checkbox:checked")) {
+  $(this).css("background-color: #eee;");
+  console.log("did this happen?")
+}
+
+
+
+
+
+
+
+
+
+    // Make words draggable with revert = true
+    score = 0;
+    if ($('.draggable')[0]) {
+      $('.draggable').draggable({
+        revert: true,
+        snapTolerance: 30,
+        revertDuration: 0,
+        cursor: "move"
+      });
+    }
+
+    // Make blank spaces accept corresponding word
+    $('.blank').each(function (index) {
+
+      toAccept = $(this)[0].dataset.accept;
+      // Resize spans to correct answer
+      if ($(this).hasClass('resizable')) {
+        answer = $('.draggable.' + toAccept);
+        width = answer[0].scrollWidth;
+        width = width - ($(this).css('padding-left').replace('px', '') * 2);
+        $(this).css('width', width);
+      }
+
+      $(this).droppable({
+        accept: '.' + toAccept,
+        drop: function (event, ui) {
+          $(this).append(ui.draggable);
+          $(this).addClass('answered');
+
+          score++;
+          $(ui.draggable).draggable('destroy');
+          $(this).droppable("destroy");
+        }
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
