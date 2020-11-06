@@ -11,7 +11,7 @@
       margin: 0 auto;
       text-align: left;
       max-width: 1000px;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .btn {
@@ -24,32 +24,32 @@
       cursor: pointer;
     }
 
-    .regular-checkbox {
+    .checkbox {
       -webkit-appearance: none;
       background-color: #fafafa;
       border: 1px solid #b0b8b8;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 9px;
+      padding: 7px;
       border-radius: 3px;
       display: inline-block;
       position: relative;
     }
 
-    .regular-checkbox:active,
-    .regular-checkbox:checked:active {
+    .checkbox:active,
+    .checkbox:checked:active {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    .regular-checkbox:checked {
+    .checkbox:checked {
       background-color: #e9ecee;
       border: 1px solid #adb8c0;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
       color: #99a1a7;
     }
 
-    .regular-checkbox:checked:after {
+    .checkbox:checked:after {
       content: '\2714';
-      font-size: 14px;
+      font-size: 12px;
       position: absolute;
       top: 0px;
       left: 3px;
@@ -87,10 +87,14 @@
       background-color: chartreuse !important;
     }
 
+    .highlight {
+      background-color: #eee !important;
+    }
+
     .aaa,
     .bbb {
       font-size: .9em;
-      font-weight:400;
+      font-weight: 400;
     }
   </style>
 </head>
@@ -118,7 +122,7 @@
     </div>
     <br>
 
-    <table class="checkbox-table center">
+    <table class="checkbox-table center" id="table">
       <caption>Quantitative Item Analysis Options</caption>
       <tr>
         <th scope="col" style="width: 5%;">Item Number</th>
@@ -129,143 +133,143 @@
       </tr>
       <tr id="row1">
         <th scope="row">1</th>
-        <td>.40</td>
-        <td>.90</td>
-        <td>10</td>
-        <td><input class="regular-checkbox item1" type="checkbox" id="item1" name="item1" ></td>
+        <td class="row1 item1">.40</td>
+        <td class="row1 item1">.90</td>
+        <td class="row1 item1">10</td>
+        <td class="row1 item1"><input class="checkbox item1" type="checkbox" id="item1" name="item1"></td>
       </tr>
       <tr id="row2">
         <th scope="row">2</th>
-        <td>.38</td>
-        <td>.50</td>
-        <td>60</td>
-        <td><input type="checkbox" class="regular-checkbox item2" id="item2" name="item2" ></td>
+        <td class="row2 item2">.38</td>
+        <td class="row2 item2">.50</td>
+        <td class="row2 item2">60</td>
+        <td class="row2 item2"><input type="checkbox" class="checkbox item2" id="item2" name="item2"></td>
       </tr>
       <tr id="row3">
         <th scope="row">3</th>
-        <td>.05</td>
-        <td>.50</td>
-        <td>19</td>
-        <td><input type="checkbox" class="regular-checkbox item3" id="item3" name="item3" ></td>
+        <td class="row3 item3">.05</td>
+        <td class="row3 item3">.50</td>
+        <td class="row3" item3>19</td>
+        <td class="row3" item3><input type="checkbox" class="checkbox item3" id="item3" name="item3"></td>
       </tr>
       <tr id="row4">
         <th scope="row">4</th>
         <td>.30</td>
         <td>.48</td>
         <td>-2</td>
-        <td><input type="checkbox" class="regular-checkbox item4" id="item4" name="item4" ></td>
+        <td><input type="checkbox" class="checkbox item4" id="item4" name="item4"></td>
       </tr>
       <tr id="row5">
         <th scope="row">5</th>
         <td>.50</td>
         <td>.50</td>
         <td>50</td>
-        <td><input class="regular-checkbox item5" type="checkbox" id="item5" name="item5" ></td>
+        <td><input class="checkbox item5" type="checkbox" id="item5" name="item5"></td>
       </tr>
       <tr id="row6">
         <th scope="row">6</th>
         <td>.01</td>
         <td>.98</td>
         <td>0</td>
-        <td><input class="regular-checkbox item6" type="checkbox" id="item6" name="item6" ></td>
+        <td><input class="checkbox item6" type="checkbox" id="item6" name="item6"></td>
       </tr>
       <tr id="row7">
         <th scope="row">7</th>
         <td>.60</td>
         <td>.60</td>
         <td>48</td>
-        <td><input class="regular-checkbox item7" type="checkbox" id="item7" name="item7" ></td>
+        <td><input class="checkbox item7" type="checkbox" id="item7" name="item7"></td>
       </tr>
       <tr id="row8">
         <th scope="row">8</th>
         <td>.00</td>
         <td>.10</td>
         <td>10</td>
-        <td><input class="regular-checkbox item8" type="checkbox" id="item8" name="item8" ></td>
+        <td><input class="checkbox item8" type="checkbox" id="item8" name="item8"></td>
       </tr>
       <tr id="row9">
         <th scope="row">9</th>
         <td>.55</td>
         <td>.49</td>
         <td>40</td>
-        <td><input type="checkbox" class="regular-checkbox item9" id="item9" name="item9" ></td>
+        <td><input type="checkbox" class="checkbox item9" id="item9" name="item9"></td>
       </tr>
       <tr id="row10">
         <th scope="row">10</th>
         <td>.30</td>
         <td>.61</td>
         <td>-5</td>
-        <td><input type="checkbox" id="item10" class="item10 regular-checkbox" name="item10" ></td>
+        <td><input type="checkbox" id="item10" class="item10 checkbox" name="item10"></td>
       </tr>
       <tr id="row11">
         <th scope="row">11</th>
         <td>.44</td>
         <td>.51</td>
         <td>80</td>
-        <td><input type="checkbox" id="item11" name="item11"  class="item11 regular-checkbox"></td>
+        <td><input type="checkbox" id="item11" name="item11" class="item11 checkbox"></td>
       </tr>
       <tr id="row12">
         <th scope="row">12</th>
         <td>-.10</td>
         <td>.66</td>
         <td>7</td>
-        <td><input type="checkbox" id="item12" name="item12"  class="regular-checkbox item12"></td>
+        <td><input type="checkbox" id="item12" name="item12" class="checkbox item12"></td>
       </tr>
       <tr id="row13">
         <th scope="row">13</th>
         <td>.40</td>
         <td>.55</td>
         <td>75</td>
-        <td><input type="checkbox" class="regular-checkbox item13" id="item13" name="item13" ></td>
+        <td><input type="checkbox" class="checkbox item13" id="item13" name="item13"></td>
       </tr>
       <tr id="row14">
         <th scope="row">14</th>
         <td>.77</td>
         <td>.43</td>
         <td>-10</td>
-        <td><input type="checkbox" class="regular-checkbox item14" id="item14" name="item14" ></td>
+        <td><input type="checkbox" class="checkbox item14" id="item14" name="item14"></td>
       </tr>
       <tr id="row15">
         <th scope="row">15</th>
         <td>.71</td>
         <td>.71</td>
         <td>60</td>
-        <td><input type="checkbox" class="regular-checkbox item15" id="item15" name="item15" ></td>
+        <td><input type="checkbox" class="checkbox item15" id="item15" name="item15"></td>
       </tr>
       <tr id="row16">
         <th scope="row">16</th>
         <td>.33</td>
         <td>.56</td>
         <td>40</td>
-        <td><input type="checkbox" class="regular-checkbox item16" id="item16" name="item16" ></td>
+        <td><input type="checkbox" class="checkbox item16" id="item16" name="item16"></td>
       </tr>
       <tr id="row17">
         <th scope="row">17</th>
         <td>.00</td>
         <td>.2</td>
         <td>15</td>
-        <td><input type="checkbox" id="item17" name="item17"  class="regular-checkbox item17"></td>
+        <td><input type="checkbox" id="item17" name="item17" class="checkbox item17"></td>
       </tr>
       <tr id="row18">
         <th scope="row">18</th>
         <td>.22</td>
         <td>.35</td>
         <td>60</td>
-        <td><input type="checkbox" class="regular-checkbox item18" id="item18" name="item18" ></td>
+        <td><input type="checkbox" class="checkbox item18" id="item18" name="item18"></td>
       </tr>
       <tr id="row19">
         <th scope="row">19</th>
         <td>.55</td>
         <td>.43</td>
         <td>70</td>
-        <td><input type="checkbox" class="regular-checkbox item19" id="item19" name="item19" ></td>
+        <td><input type="checkbox" class="checkbox item19" id="item19" name="item19"></td>
       </tr>
       <tr id="row20">
         <th scope="row">20</th>
         <td>.04</td>
         <td>.40</td>
         <td>16</td>
-        <td><input type="checkbox" class="regular-checkbox item20" id="item20" name="item20" ></td>
+        <td><input type="checkbox" class="checkbox item20" id="item20" name="item20"></td>
       </tr>
     </table>
 
@@ -278,7 +282,7 @@
     <!-- answer section  -->
     <div class="answers hide">
       <p class="note">NOTE: Compare your answers to the table below. If you have additional questions, please review the material or contact the instructor.</p>
-      <table class="checkbox-table center">
+      <table class="checkbox-table answer-table center">
         <caption>Quantitative Item Analysis Options</caption>
         <tr>
           <th scope="col" style="width: 5%;">Item Number</th>
@@ -292,236 +296,251 @@
           <td>.40</td>
           <td>.90</td>
           <td>10</td>
-          <td><input class="regular-checkbox item1" type="checkbox" name="item1" ></td>
+          <td><input class="checkbox item1" type="checkbox" name="item1"></td>
         </tr>
         <tr id="row2">
           <th class="correct" scope="row">2</th>
           <td class="correct">.38</td>
           <td class="correct">.50</td>
           <td class="correct">60</td>
-          <td class="correct"><input type="checkbox" class="regular-checkbox item2" name="item2"  checked></td>
+          <td class="correct"><input type="checkbox" class="checkbox item2" name="item2" checked></td>
         </tr>
         <tr id="row3">
           <th scope="row">3</th>
           <td>.05</td>
           <td>.50</td>
           <td>19</td>
-          <td><input type="checkbox" class="regular-checkbox item3" name="item3" ></td>
+          <td><input type="checkbox" class="checkbox item3" name="item3"></td>
         </tr>
         <tr id="row4">
           <th scope="row">4</th>
           <td>.30</td>
           <td>.48</td>
           <td>-2</td>
-          <td><input type="checkbox" class="regular-checkbox item4" name="item4" ></td>
+          <td><input type="checkbox" class="checkbox item4" name="item4"></td>
         </tr>
         <tr id="row5">
           <th class="correct" scope="row">5</th>
           <td class="correct">.50</td>
           <td class="correct">.50</td>
           <td class="correct">50</td>
-          <td class="correct"><input class="regular-checkbox item5" type="checkbox" name="item5" checked></td>
+          <td class="correct"><input class="checkbox item5" type="checkbox" name="item5" checked></td>
         </tr>
         <tr id="row6">
           <th scope="row">6</th>
           <td>.01</td>
           <td>.98</td>
           <td>0</td>
-          <td><input class="regular-checkbox item6" type="checkbox" name="item6" ></td>
+          <td><input class="checkbox item6" type="checkbox" name="item6"></td>
         </tr>
         <tr id="row7">
           <th class="correct" scope="row">7</th>
           <td class="correct">.60</td>
           <td class="correct">.60</td>
           <td class="correct">48</td>
-          <td class="correct"><input checked class="regular-checkbox item7" type="checkbox" name="item7" ></td>
+          <td class="correct"><input checked class="checkbox item7" type="checkbox" name="item7"></td>
         </tr>
         <tr id="row8">
           <th scope="row">8</th>
           <td>.00</td>
           <td>.10</td>
           <td>10</td>
-          <td><input class="regular-checkbox item8" type="checkbox" name="item8" ></td>
+          <td><input class="checkbox item8" type="checkbox" name="item8"></td>
         </tr>
         <tr id="row9">
           <th class="correct" scope="row">9</th>
           <td class="correct">.55</td>
           <td class="correct">.49</td>
           <td class="correct">40</td>
-          <td class="correct"><input checked type="checkbox" class="regular-checkbox item9" name="item9" ></td>
+          <td class="correct"><input checked type="checkbox" class="checkbox item9" name="item9"></td>
         </tr>
         <tr id="row10">
           <th scope="row">10</th>
           <td>.30</td>
           <td>.61</td>
           <td>-5</td>
-          <td><input type="checkbox" class="item10 regular-checkbox" name="item10" ></td>
+          <td><input type="checkbox" class="item10 checkbox" name="item10"></td>
         </tr>
         <tr id="row11">
           <th class="correct" scope="row">11</th>
           <td class="correct">.44</td>
           <td class="correct">.51</td>
           <td class="correct">80</td>
-          <td class="correct"><input checked type="checkbox" name="item11"  class="item11 regular-checkbox"></td>
+          <td class="correct"><input checked type="checkbox" name="item11" class="item11 checkbox"></td>
         </tr>
         <tr id="row12">
           <th scope="row">12</th>
           <td>-.10</td>
           <td>.66</td>
           <td>7</td>
-          <td><input type="checkbox" name="item12"  class="regular-checkbox item12"></td>
+          <td><input type="checkbox" name="item12" class="checkbox item12"></td>
         </tr>
         <tr id="row13">
           <th class="correct" scope="row">13</th>
           <td class="correct">.40</td>
           <td class="correct">.55</td>
           <td class="correct">75</td>
-          <td class="correct"><input checked type="checkbox" class="regular-checkbox item13" name="item13" ></td>
+          <td class="correct"><input checked type="checkbox" class="checkbox item13" name="item13"></td>
         </tr>
         <tr id="row14">
           <th scope="row">14</th>
           <td>.77</td>
           <td>.43</td>
           <td>-10</td>
-          <td><input type="checkbox" class="regular-checkbox item14" name="item14" ></td>
+          <td><input type="checkbox" class="checkbox item14" name="item14"></td>
         </tr>
         <tr id="row15">
           <th class="correct" scope="row">15</th>
           <td class="correct">.71</td>
           <td class="correct">.71</td>
           <td class="correct">60</td>
-          <td class="correct"><input checked type="checkbox" class="regular-checkbox item15" name="item15" ></td>
+          <td class="correct"><input checked type="checkbox" class="checkbox item15" name="item15"></td>
         </tr>
         <tr id="row16">
           <th class="correct" scope="row">16</th>
           <td class="correct">.33</td>
           <td class="correct">.56</td>
           <td class="correct">40</td>
-          <td class="correct"><input checked type="checkbox" class="regular-checkbox item16" name="item16" ></td>
+          <td class="correct"><input checked type="checkbox" class="checkbox item16" name="item16"></td>
         </tr>
         <tr id="row17">
           <th scope="row">17</th>
           <td>.00</td>
           <td>.2</td>
           <td>15</td>
-          <td><input type="checkbox" name="item17"  class="regular-checkbox item17"></td>
+          <td><input type="checkbox" name="item17" class="checkbox item17"></td>
         </tr>
         <tr id="row18">
           <th class="correct" scope="row">18</th>
           <td class="correct">.22</td>
           <td class="correct">.35</td>
           <td class="correct">60</td>
-          <td class="correct"><input checked type="checkbox" class="regular-checkbox item18" name="item18" ></td>
+          <td class="correct"><input checked type="checkbox" class="checkbox item18" name="item18"></td>
         </tr>
         <tr id="row19">
           <th class="correct" scope="row">19</th>
           <td class="correct">.55</td>
           <td class="correct">.43</td>
           <td class="correct">70</td>
-          <td class="correct"><input checked type="checkbox" class="regular-checkbox item19" name="item19" ></td>
+          <td class="correct"><input checked type="checkbox" class="checkbox item19" name="item19"></td>
         </tr>
         <tr id="row20">
           <th scope="row">20</th>
           <td>.04</td>
           <td>.40</td>
           <td>16</td>
-          <td><input type="checkbox" class="regular-checkbox item20" name="item20" ></td>
+          <td><input type="checkbox" class="checkbox item20" name="item20"></td>
         </tr>
       </table>
     </div>
   </div>
   <br><br>
-  <br> <p>&nbsp;</p>
+  <br>
+  <p>&nbsp;</p>
 
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
   <script>
+    $(document).ready(function () {
+      // default state of hint button content 
+      $(".hide").hide();
 
-    // default state of hint button content 
-    $(".hide").hide();
-
-    // show/hide hint content
-    $('.btn').click(function () {
-      switch (true) {
-        case $(this).hasClass('aaa'):
-          $(".hint1").toggle();
-          break;
-        case $(this).hasClass('bbb'):
-          $(".hint2").toggle();
-          break;
-        case $(this).hasClass('ansbtn'):
-          $(".answers").toggle();
-      }
-    })
-
-      // $('.aaa, .bbb, .btn').click(function () {
-      //     switch (true) {
-      //       case $(this).hasClass('aaa'):
-      //         $(".hint1").toggle();
-      //         break;
-      //       case $(this).hasClass('bbb'):
-      //         $(".hint2").toggle();
-      //         break;
-      //       case $(this).hasClass('.ansbtn'):
-      //         $(".answers").toggle();
-      //     }
-      //   })
-
-    // color selected rows when box checked
-    $('input[type="checkbox"]').click(function () {
-      switch ($(this).prop(":checked")) {
-        case $(this).hasClass('.item1'):
-          $(".checkbox-table tr").children('td, th').css("background-color", "#eee;");
-
-          console.log('this is happening')
-          break;
-      }
-      console.log("no its happening here")
-    })
-
-
-
-
-
-
-
-
-
-    // Make words draggable with revert = true
-    score = 0;
-    if ($('.draggable')[0]) {
-      $('.draggable').draggable({
-        revert: true,
-        snapTolerance: 30,
-        revertDuration: 0,
-        cursor: "move"
-      });
-    }
-
-    // Make blank spaces accept corresponding word
-    $('.blank').each(function (index) {
-
-      toAccept = $(this)[0].dataset.accept;
-      // Resize spans to correct answer
-      if ($(this).hasClass('resizable')) {
-        answer = $('.draggable.' + toAccept);
-        width = answer[0].scrollWidth;
-        width = width - ($(this).css('padding-left').replace('px', '') * 2);
-        $(this).css('width', width);
-      }
-
-      $(this).droppable({
-        accept: '.' + toAccept,
-        drop: function (event, ui) {
-          $(this).append(ui.draggable);
-          $(this).addClass('answered');
-
-          score++;
-          $(ui.draggable).draggable('destroy');
-          $(this).droppable("destroy");
+      // show/hide hint content
+      $('.btn').click(function () {
+        switch (true) {
+          case $(this).hasClass('aaa'):
+            $(".hint1").toggle();
+            break;
+          case $(this).hasClass('bbb'):
+            $(".hint2").toggle();
+            break;
+          case $(this).hasClass('ansbtn'):
+            $(".answers").toggle();
         }
+      })
+
+      // users can't change the checkboxes on answer table but can change their own answers
+      $('.answer-table input[type="checkbox"]').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
       });
-    });
+
+
+
+      // THIS **************************
+      // color selected rows when box checked
+      // $('.checkbox-table input[type="checkbox"]').click(function () {
+      //   if ($('input[type="checkbox"]').prop("checked")) {
+
+      //     var className = $(':input').attr('class');
+      //     console.log(className)
+      //     console.log($('.item1'))
+      //     switch (className) {
+      //       case $('.item1'):
+      //       $(".row1").addClass("highlight");
+      //       console.log('this is happening');
+      //       break;
+
+      //     case $('.item2'):
+      //       $(".row2").addClass("highlight");
+      //       console.log('this is happening');
+      //       break;
+
+      //     case $('.item3'):
+      //       $(".row3").addClass("highlight");
+      //       console.log('this is happening');
+      //       break;
+
+
+
+
+
+
+      //     }
+
+
+
+
+
+
+      //   } else if ($(".checkbox").prop("checked", false)) {
+      //     $("tr td").removeClass("highlight");
+      //     console.log("remove highlight")
+      //     console.log(className)
+
+      //   }
+
+
+   // })
+
+
+
+  // $('.checkbox-table input[type="checkbox"]').click(function () {
+  //   if ($(".checkbox").prop("checked")) {
+  //     $(this).parent().parent().find('td').addClass("highlight");
+  //     console.log('this is happening');
+
+  //   } else if ($(".checkbox").prop("checked", false)) {
+  //     $("tr td").removeClass("highlight");
+  //     console.log("no its happening here")
+  //   }
+
+
+
+
+
+    // $('.checkbox-table input[type="checkbox"]').click(function () {
+    //   if ($(".checkbox").prop("checked")) {
+    //     $(".row1").css("background-color", "#eee");
+    //     console.log('this is happening');
+
+    //   } else if ($(".checkbox").prop("checked", false)) {
+    //     $("tr td").css("background-color", "#e1f2fb");
+    //     console.log("no its happening here")
+    //   }
+
+
+    }); // end of doc ready 
 
   </script>
 
