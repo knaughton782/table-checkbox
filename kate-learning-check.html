@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Select the Correct Answer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  
+  <style>
+    body {
+      margin: 0 auto;
+      text-align: left;
+      max-width: 1000px;
+      font-size: 16px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .btn {
+      padding: 5px 10px;
+      margin: 10px;
+      font-size: medium;
+      background-color: #a0d4ff;
+      border-radius: 4px;
+      border-color: #c2dfee;
+      cursor: pointer;
+    }
+    /* .checkbox {
+      -webkit-appearance: none;
+      background-color: #fafafa;
+      border: 1px solid #b0b8b8;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+      padding: 7px;
+      border-radius: 3px;
+      display: inline-block;
+      position: relative;
+    }
+    .checkbox:active,
+    .checkbox:checked:active {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .checkbox:checked {
+      background-color: #e9ecee;
+      border: 1px solid #adb8c0;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+      color: #99a1a7;
+    }
+    .checkbox:checked:after {
+      content: '\2714';
+      font-size: 12px;
+      position: absolute;
+      top: 0px;
+      left: 3px;
+      color: #1e4e22;
+    } */
+    th {
+      padding: 10px;
+      border: 1px solid #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+    td {
+      padding: 10px;
+      border: 1px solid #fff;
+      font-weight: normal;
+      text-align: left;
+    }
+    .checkbox-table {
+      color: #26424e;
+      font-family: Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
+      background-color: #f3efef;
+    }
+    .checkbox-table td {
+      background-color: #e1f2fb;
+    }
+    .center {
+      text-align: center;
+    }
+    .note {
+      font-weight: 300;
+      font-size: 1em;
+    }
+    .correct {
+      background-color: chartreuse !important;
+    }
+    .highlight {
+      background-color: #eee !important;
+    }
+    .aaa,
+    .bbb {
+      font-size: .9em;
+      font-weight: 400;
+    }
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+  }
+  </style>
+</head>
+
+<body>
+  <div>
+    <br>
+    <table class="checkbox-table center" id="table">
+      <caption style="display: none;">Course Creation Analysis</caption>
+      <tr>
+        <th scope="col" style="width: 20%;">Assessment Categories</th>
+        <th scope="col" style="width: 5%;">Yes / No</th>
+      </tr>
+      <!-- question 1  -->
+      <tr>
+        <td>Are you assessing student learning and competence for each weekly module in some way? </td>
+        <td><input type="text"></td>
+      </tr>
+      <!-- question 2  -->
+      <tr>
+        <td>Are you using quizzes, exams, group discussions, activities, labs, papers, projects etc. to assess your students’ learning and competency? </td>
+        <td><input type="text"></td>
+      </tr>
+      <!-- question 3  -->
+      <tr>
+        <td>How many gradable assessments do you want students to complete for the term?</td>
+        <td><input type="text"></td>
+      </tr>
+      <!-- question 4  -->
+      <!-- <tr>
+        <td>Will you use WorldClassRoom to create and grade assessments (i.e. quizzes)?</td>
+        <td><input type="text"></td>
+      </tr> -->
+      <!-- question 5  -->
+      <tr>
+        <td>Once you have a list of assessments made, how will you distribute the grades - How many points will each assignment be worth? Will you use weighted grading (e.g. Exams 60%, Quizzes 30%, and Discussion 10%)? </td>
+        <td><input type="text"></td>
+      </tr>
+      <!-- question 6  -->
+      <tr>
+        <td>Do you have rubrics or would you like to have them created in WorldClassRoom?</td>
+        <td><input type="text"></td>
+      </tr>
+      <!-- question 7  -->
+      <tr>
+        <td>Are you giving students an option to earn extra credit? </td>
+        <td><input type="text"></td>
+      </tr>
+  
+    </table>
+
+  <p>&nbsp;</p>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+  <script>
+    $(document).ready(function () {
+      // default state of hint button content 
+      $(".hide").hide();
+
+      // show/hide hint content
+      $('.btn').click(function () {
+        switch (true) {
+          case $(this).hasClass('aaa'):
+            $(".hint1").toggle();
+            break;
+          case $(this).hasClass('bbb'):
+            $(".hint2").toggle();
+            break;
+          case $(this).hasClass('ansbtn'):
+            $(".answers").toggle();
+        }
+      })
+
+      // users can't change the checkboxes on answer table but can change their own answers
+      $('.answer-table input[type="checkbox"]').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+
+    }); // end of doc ready 
+
+  </script>
+
+</body>
+
+</html>
