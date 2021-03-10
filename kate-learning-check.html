@@ -14,55 +14,19 @@
       font-size: 16px;
       font-family: Helvetica, Arial, sans-serif;
     }
-    .btn {
-      padding: 5px 10px;
-      margin: 10px;
-      font-size: medium;
-      background-color: #a0d4ff;
-      border-radius: 4px;
-      border-color: #c2dfee;
-      cursor: pointer;
-    }
-    /* .checkbox {
-      -webkit-appearance: none;
-      background-color: #fafafa;
-      border: 1px solid #b0b8b8;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 7px;
-      border-radius: 3px;
-      display: inline-block;
-      position: relative;
-    }
-    .checkbox:active,
-    .checkbox:checked:active {
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    .checkbox:checked {
-      background-color: #e9ecee;
-      border: 1px solid #adb8c0;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-      color: #99a1a7;
-    }
-    .checkbox:checked:after {
-      content: '\2714';
-      font-size: 12px;
-      position: absolute;
-      top: 0px;
-      left: 3px;
-      color: #1e4e22;
-    } */
-    th {
+    th, td {
       padding: 10px;
       border: 1px solid #fff;
       font-weight: bold;
       text-align: center;
     }
     td {
-      padding: 10px;
-      border: 1px solid #fff;
       font-weight: normal;
       text-align: left;
     }
+    /* td.feedback {
+      padding: 10px 15px;
+    } */
     .checkbox-table {
       color: #26424e;
       font-family: Helvetica, Arial, sans-serif;
@@ -72,110 +36,171 @@
     .checkbox-table td {
       background-color: #e1f2fb;
     }
-    .center {
-      text-align: center;
-    }
-    .note {
-      font-weight: 300;
-      font-size: 1em;
-    }
-    .correct {
-      background-color: chartreuse !important;
-    }
-    .highlight {
-      background-color: #eee !important;
-    }
-    .aaa,
-    .bbb {
-      font-size: .9em;
-      font-weight: 400;
-    }
+
     input[type=text] {
       width: 100%;
       padding: 12px 20px;
       margin: 8px 0;
       box-sizing: border-box;
   }
+  /* #overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.1);
+    display: none;
+} */
+  /* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  box-sizing: border-box;
+  /* visibility: hidden; */
+  width: 500px;
+  height: 250px;
+  box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+              0 0  0 2px rgb(255,255,255),
+              0.3em 0.3em 1em rgba(0,0,0,0.3);
+  background-color: #004990;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+  /* bottom: 125%; */
+  bottom: 25%;
+  left: 30%;
+  margin-left: -80px;
+}
+ .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
   </style>
 </head>
 
 <body>
-  <div>
-    <br>
-    <table class="checkbox-table center" id="table">
-      <caption style="display: none;">Course Creation Analysis</caption>
-      <tr>
-        <th scope="col" style="width: 20%;">Assessment Categories</th>
-        <th scope="col" style="width: 5%;">Yes / No</th>
-      </tr>
-      <!-- question 1  -->
-      <tr>
-        <td>Are you assessing student learning and competence for each weekly module in some way? </td>
-        <td><input type="text"></td>
-      </tr>
-      <!-- question 2  -->
-      <tr>
-        <td>Are you using quizzes, exams, group discussions, activities, labs, papers, projects etc. to assess your students’ learning and competency? </td>
-        <td><input type="text"></td>
-      </tr>
-      <!-- question 3  -->
-      <tr>
-        <td>Have you thought about how many gradable assessments you want students to complete for the term?</td>
-        <td><input type="text"></td>
-      </tr>
-      <!-- question 4  -->
-      <!-- <tr>
-        <td>Will you use WorldClassRoom to create and grade assessments (i.e. quizzes)?</td>
-        <td><input type="text"></td>
-      </tr> -->
-      <!-- question 5  -->
-      <tr>
-        <td>Once you have a list of assessments made, have you considered how you will distribute the grades – i.e., how many points will each assignment be worth? Using weighted grading (i.e. Exams 60%, Quizzes 30%, and Discussion 10%) is a recommended way to balance the points per assignment.</td>
-        <td><input type="text"></td>
-      </tr>
-      <!-- question 6  -->
-      <tr>
-        <td>Do you have rubrics or would you like to have them created in WorldClassRoom?</td>
-        <td><input type="text"></td>
-      </tr>
-      <!-- question 7  -->
-      <tr>
-        <td>Are you giving students an option to earn extra credit? </td>
-        <td><input type="text"></td>
-      </tr>
+ <div id="overlay">
+    <div class="popup">
+      <br>
+      <table class="checkbox-table center" id="table">
+        <caption style="display: none;">Course Creation Analysis</caption>
+        <tr>
+          <th scope="col" style="width: 20%;">Assessment Categories</th>
+          <th scope="col" style="width: 5%;">Yes / No</th>
+        </tr>
+        <!-- question 1  -->
+        <tr>
+          <td>Are you assessing student learning and competence for each weekly module in some way? </td>
+          <td><input type="text" id="popup1" class="answerbox"></td>
+          <span id="popup1-ans" class="popuptext hide"><div class="close">X</div><h3>Consider This</h3>This can be accomplished in a variety of ways but do strive for consistency. That might mean 2 discussions and a short paper each week. Or maybe a quiz and a reflection paper. Think about it and consult with your ID if you have questions.</span>
+        </tr>
+        <!-- question 2  -->
+        <tr>
+          <td>Are you using quizzes, exams, group discussions, activities, labs, papers, projects etc. to assess your students’ learning and competency? </td>
+          <td><input type="text" id="popup2" class="answerbox"></td>
+          <span id="popup2-ans" class="popuptext hide"><div class="close">X</div><h3>Consider This</h3>You do not have to use all of these assessment types every week. Things like papers, exams, and projects would be used less frequently.</span>
+        </tr>
+        <!-- question 3  -->
+        <tr>
+          <td>Have you thought about how many gradable assessments you want students to complete for the term?</td>
+          <td><input type="text" id="popup3" class="answerbox"></td>
+          <span id="popup3-ans" class="popuptext hide"><div class="close">X</div><h3>Consider This</h3>Think of these in the terms of formative and summative and be mindful not to overload the students. Consult with your ID for insight.</span>
+        </tr>
+        <!-- question 4  -->
+        <tr>
+          <td>Once you have a list of assessments made, have you considered how you will distribute the grades – i.e., how many points will each assignment be worth? Using weighted grading (i.e. Exams 60%, Quizzes 30%, and Discussion 10%) is a recommended way to balance the points per assignment.</td>
+          <td><input type="text" id="popup4" class="answerbox"></td>
+          <span id="popup4-ans" class="popuptext hide"><div class="close">X</div><h3>Consider This</h3>This piece of information will be important to share with your ID but if you don’t know yet, be sure to have a conversation with your ID.</span>
+        </tr>
+        <!-- question 5  -->
+        <tr>
+          <td>Do you have rubrics or would you like to have them created in WorldClassRoom?</td>
+          <td><input type="text" id="popup5" class="answerbox"></td>
+          <span id="popup5-ans" class="popuptext hide"><div class="close">X</div><h3>Consider This</h3>Rubrics are a fantastic way to share your expectations with students, to let students know how to successfully complete the assignment, and to assist you with consistent grading. Examples are on the Resources page in this training.</span>
+        </tr>
+        <!-- question 6  -->
+        <tr>
+          <td>Are you giving students an option to earn extra credit? </td>
+          <td><input type="text" id="popup6" class="answerbox"></td>
+          <span id="popup6-ans" class="popuptext hide"><div class="close">X</div><h3>Consider This</h3>
+            This is absolutely optional but good to think about ahead of time, while you are creating the required assessments. </span>
+        </tr>
+        
+      </table>
+    
+    </div>
   
-    </table>
-
-  <p>&nbsp;</p>
+    <p>&nbsp;</p>
+ </div>
 
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
   <script>
     $(document).ready(function () {
-      // default state of hint button content 
-      $(".hide").hide();
 
-      // show/hide hint content
-      $('.btn').click(function () {
-        switch (true) {
-          case $(this).hasClass('aaa'):
-            $(".hint1").toggle();
-            break;
-          case $(this).hasClass('bbb'):
-            $(".hint2").toggle();
-            break;
-          case $(this).hasClass('ansbtn'):
-            $(".answers").toggle();
-        }
-      })
+      $('.hide').hide();
 
-      // users can't change the checkboxes on answer table but can change their own answers
-      $('.answer-table input[type="checkbox"]').click(function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+        $('.answerbox').on('keypress', function (e) {
+          if (e.which === 13) {
+
+            if ($('#popup1').val().length > 0) {
+              $('#popup1-ans').show();
+              
+            }
+            if ($('#popup2').val().length > 0) {
+              $('#popup2-ans').show();
+            }
+            if ($('#popup3').val().length > 0) {
+              $('#popup3-ans').show();
+            }
+            if ($('#popup4').val().length > 0) {
+              $('#popup4-ans').show();
+            }
+            if ($('#popup5').val().length > 0) {
+              $('#popup5-ans').show();
+            }
+            if ($('#popup6').val().length > 0) {
+              $('#popup6-ans').show();
+            }
+
+          
+
+            // move to next input box
+            $(this).next('.answerbox').focus();
+
+            // alert('this worked again');
+
+            
+          }
+        });
+
+        $('.popuptext .close').on('click', function () {
+        $(this).parent().fadeOut();
       });
 
-    }); // end of doc ready 
+
+
+
+
+
+
+
+
+      }); // end of doc ready 
 
   </script>
 
