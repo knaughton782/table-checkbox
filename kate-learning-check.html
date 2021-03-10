@@ -39,9 +39,10 @@
 
     input[type=text] {
       width: 100%;
-      padding: 12px 20px;
+      padding: 12px;
       margin: 8px 0;
       box-sizing: border-box;
+      font-size: 18px;
   }
   /* #overlay {
     height: 100%;
@@ -157,30 +158,59 @@
         $('.answerbox').on('keypress', function (e) {
           if (e.which === 13) {
 
-            if ($('#popup1').val().length > 0) {
+            if ($('#popup1').val().length > 0 ) {
               $('#popup1-ans').show();
+              $('#popup2-ans').hide();
+              $('#popup3-ans').hide();
+              $('#popup4-ans').hide();
+              $('#popup5-ans').hide();
+              $('#popup6-ans').hide();
               
             }
-            if ($('#popup2').val().length > 0) {
+            if ($('#popup2').val().length > 0 ) {
+              $('#popup1-ans').hide();
               $('#popup2-ans').show();
+              $('#popup3-ans').hide();
+              $('#popup4-ans').hide();
+              $('#popup5-ans').hide();
+              $('#popup6-ans').hide();
             }
             if ($('#popup3').val().length > 0) {
+              $('#popup1-ans').hide();
+              $('#popup2-ans').hide();
               $('#popup3-ans').show();
+              $('#popup4-ans').hide();
+              $('#popup5-ans').hide();
+              $('#popup6-ans').hide();
             }
             if ($('#popup4').val().length > 0) {
+              $('#popup1-ans').hide();
+              $('#popup2-ans').hide();
+              $('#popup3-ans').hide();
               $('#popup4-ans').show();
+              $('#popup5-ans').hide();
+              $('#popup6-ans').hide();
             }
-            if ($('#popup5').val().length > 0) {
+            if ($('#popup5').val().length > 0 ) {
+              $('#popup1-ans').hide();
+              $('#popup2-ans').hide();
+              $('#popup3-ans').hide();
+              $('#popup4-ans').hide();
               $('#popup5-ans').show();
+              $('#popup6-ans').hide();
             }
-            if ($('#popup6').val().length > 0) {
+            if ($('#popup6').val().length > 0 ) {
+              $('#popup1-ans').hide();
+              $('#popup2-ans').hide();
+              $('#popup3-ans').hide();
+              $('#popup4-ans').hide();
+              $('#popup5-ans').hide();
               $('#popup6-ans').show();
             }
 
           
 
-            // move to next input box
-            $(this).next('.answerbox').focus();
+            
 
             // alert('this worked again');
 
