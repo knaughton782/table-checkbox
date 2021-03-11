@@ -155,10 +155,13 @@
 
       $('.hide').hide();
 
+      // popups are triggered for each input after user types answer and presses enter 
+        // $('.answerbox').on('input', function (e) {
         $('.answerbox').on('keypress', function (e) {
+
           if (e.which === 13) {
 
-            if ($('#popup1').val().length > 0 && $('#popup1:not(.answered)')) {
+            if ($('#popup1').val().length > 2 && $('#popup1:not(.answered)')) {
               $('#popup1-ans').show();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
@@ -170,7 +173,7 @@
 
               $('#popup1').addClass('.answered');
             }
-            if ($('#popup2').val().length > 0 && $('#popup2:not(.answered)')) {
+            if ($('#popup2').val().length > 2 && $('#popup2:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').show();
               $('#popup3-ans').hide();
@@ -182,7 +185,7 @@
 
               $('#popup2').addClass('.answered');
             }
-            if ($('#popup3').val().length > 0 && $('#popup3:not(.answered)')) {
+            if ($('#popup3').val().length > 2 && $('#popup3:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').show();
@@ -194,7 +197,7 @@
 
               $('#popup3').addClass('.answered');
             }
-            if ($('#popup4').val().length > 0 && $('#popup4:not(.answered)')) {
+            if ($('#popup4').val().length > 2 && $('#popup4:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
@@ -206,7 +209,7 @@
 
               $('#popup4').addClass('.answered');
             }
-            if ($('#popup5').val().length > 0 && $('#popup5:not(.answered)')) {
+            if ($('#popup5').val().length > 2 && $('#popup5:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
@@ -218,7 +221,7 @@
 
               $('#popup5').addClass('.answered');
             }
-            if ($('#popup6').val().length > 0 && $('#popup6:not(.answered)')) {
+            if ($('#popup6').val().length > 2 && $('#popup6:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
@@ -233,10 +236,12 @@
 
           }
           
-        });
+        }
+        );
 
         $('.popuptext .close').on('click', function () {
         $(this).parent().fadeOut();
+        
       });
 
 
