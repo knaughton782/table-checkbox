@@ -158,64 +158,81 @@
         $('.answerbox').on('keypress', function (e) {
           if (e.which === 13) {
 
-            if ($('#popup1').val().length > 0 ) {
+            if ($('#popup1').val().length > 0 && $('#popup1:not(.answered)')) {
               $('#popup1-ans').show();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
               $('#popup4-ans').hide();
               $('#popup5-ans').hide();
               $('#popup6-ans').hide();
-              
+              //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+              $('#popup1').addClass('.answered');
             }
-            if ($('#popup2').val().length > 0 ) {
+            if ($('#popup2').val().length > 0 && $('#popup2:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').show();
               $('#popup3-ans').hide();
               $('#popup4-ans').hide();
               $('#popup5-ans').hide();
               $('#popup6-ans').hide();
+              //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+              $('#popup2').addClass('.answered');
             }
-            if ($('#popup3').val().length > 0) {
+            if ($('#popup3').val().length > 0 && $('#popup3:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').show();
               $('#popup4-ans').hide();
               $('#popup5-ans').hide();
               $('#popup6-ans').hide();
+              //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+              $('#popup3').addClass('.answered');
             }
-            if ($('#popup4').val().length > 0) {
+            if ($('#popup4').val().length > 0 && $('#popup4:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
               $('#popup4-ans').show();
               $('#popup5-ans').hide();
               $('#popup6-ans').hide();
+              //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+              $('#popup4').addClass('.answered');
             }
-            if ($('#popup5').val().length > 0 ) {
+            if ($('#popup5').val().length > 0 && $('#popup5:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
               $('#popup4-ans').hide();
               $('#popup5-ans').show();
               $('#popup6-ans').hide();
+              //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+              $('#popup5').addClass('.answered');
             }
-            if ($('#popup6').val().length > 0 ) {
+            if ($('#popup6').val().length > 0 && $('#popup6:not(.answered)')) {
               $('#popup1-ans').hide();
               $('#popup2-ans').hide();
               $('#popup3-ans').hide();
               $('#popup4-ans').hide();
               $('#popup5-ans').hide();
               $('#popup6-ans').show();
+              //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+              $('#popup6').addClass('.answered');
             }
 
-          
-
-            
-
-            // alert('this worked again');
-
-            
           }
+          
         });
 
         $('.popuptext .close').on('click', function () {
